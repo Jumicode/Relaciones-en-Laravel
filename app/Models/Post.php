@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Post extends Model
 {
@@ -13,9 +14,9 @@ class Post extends Model
 
     protected $guarded = [];
 
- public function image(): MorphOne
+ public function image(): MorphMany
  {
-    return $this->morphOne(Image::class, 'imageable');
+    return $this->morphMany(Image::class, 'imageable');
  }
 
 
