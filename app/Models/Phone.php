@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 class Phone extends Model
@@ -20,8 +21,8 @@ class Phone extends Model
     }
 
 
-    public function sim():HasOne
+    public function sim():HasMany
     {
-        return $this->hasOne(Sim::class);
+        return $this->hasMany(Sim::class);
     }
 }
