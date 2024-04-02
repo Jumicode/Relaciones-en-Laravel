@@ -8,12 +8,12 @@
 </head>
 <body>
 
-    <h1>{{ $user->name }}Phones:</h1>
+    <h1>{{ $user->name }}Roles:</h1>
     <ul>
-@foreach ($user->phones as $phone)
+@foreach ($user->roles as $role)
 
 
-    <li>{{  $phone->prefix }}  {{  $phone->phone_number  }}</li>
+    <li>{{ $role->name }} Added By: {{  $role->pivot->added_by  }}</li>
 
 
 @endforeach
