@@ -8,17 +8,6 @@
 </head>
 <body>
 
-    <h1>{{ $user->name }}Roles:</h1>
-
-    <h3>{{$user->phoneSim->company}}</h3>
-    <ul>
-@foreach ($user->roles as $role)
-
-
-    <li>{{ $role->name }} Added By: {{  $role->pivot->added_by  }}</li>
-
-
-@endforeach
-</ul>
+<h1>{{ $user->image->url}}</h1>
 </body>
 </html>
