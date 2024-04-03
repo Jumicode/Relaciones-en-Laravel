@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSimsTable extends Migration
+class CreateTagTaggablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSimsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sims', function (Blueprint $table) {
+        Schema::create('tag_taggables', function (Blueprint $table) {
             $table->id();
-            $table->string('serial_number');
-            $table->string('company');
-            $table->unsignedBigInteger('phone_id');
+            $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('tag_taggable_id');
+            $table->unsignedBigInteger('tag_taggable_type');
+
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateSimsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sims');
+        Schema::dropIfExists('tag_taggables');
     }
 }
